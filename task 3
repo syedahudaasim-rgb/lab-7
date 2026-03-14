@@ -1,0 +1,49 @@
+#include <stdio.h>
+
+int main() {
+    int pass[10], fail[10];
+    int i, mark;
+    int p = 0, f = 0;
+    float avgPass = 0, avgFail = 0;
+
+    for(i = 0; i < 10; i++) {
+        printf("Enter quiz marks (-1 to exit): ");
+        scanf("%d", &mark);
+
+        if(mark == -1) {
+            break;
+        }
+
+        if(mark >= 5 && mark <= 10) {
+            pass[p] = mark;
+            avgPass += mark;
+            p++;
+        }
+        else if(mark >= 0 && mark < 5) {
+            fail[f] = mark;
+            avgFail += mark;
+            f++;
+        }
+        else {
+            printf("Invalid marks\n");
+        }
+    }
+
+    printf("\nPass Students Marks:\n");
+    for(i = 0; i < p; i++) {
+        printf("%d ", pass[i]);
+    }
+
+    printf("\nFail Students Marks:\n");
+    for(i = 0; i < f; i++) {
+        printf("%d ", fail[i]);
+    }
+
+    if(p > 0)
+        printf("\nAverage Pass Marks = %.2f", avgPass / p);
+
+    if(f > 0)
+        printf("\nAverage Fail Marks = %.2f", avgFail / f);
+
+    return 0;
+}
