@@ -1,0 +1,12 @@
+#include <stdio.h>
+
+int main() {
+    char str[100];
+
+    printf("Enter characters except alphabets: ");
+    scanf("%[^A-Za-z]",str);
+
+    printf("Output: %s",str);
+
+    return 0;
+}
